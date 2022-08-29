@@ -30,10 +30,9 @@ namespace Battery.User_Controls
             gridControl1.DataSource = itemData.Query().OrderByDescending(x => x.Id).ToList();
 
         }
-
-        internal void show()
+        public void refreshData()
         {
-            throw new NotImplementedException();
+            gridControl1.DataSource = itemData.Query().OrderByDescending(x => x.Id).ToList();
         }
 
         private void SaveData()
@@ -97,7 +96,6 @@ namespace Battery.User_Controls
             txt_Item.Text = null;
             txt_Price.Text = null;
             txt_Quantity.Text = null;
-            txt_ItemTotalPrice.Text = null;
             rich_ItemDetails.Text = null;
             date_Item.DateTime = DateTime.Today;
         }

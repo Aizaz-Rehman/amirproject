@@ -42,7 +42,6 @@
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.rich_ItemDetails = new DevExpress.XtraRichEdit.RichEditControl();
             this.date_Item = new DevExpress.XtraEditors.DateEdit();
-            this.txt_ItemTotalPrice = new DevExpress.XtraEditors.TextEdit();
             this.txt_Quantity = new DevExpress.XtraEditors.TextEdit();
             this.txt_Price = new DevExpress.XtraEditors.TextEdit();
             this.txt_Item = new DevExpress.XtraEditors.TextEdit();
@@ -58,7 +57,6 @@
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -94,7 +92,6 @@
             this.dataLayoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.date_Item.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Item.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ItemTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Quantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Item.Properties)).BeginInit();
@@ -109,7 +106,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
@@ -164,7 +160,6 @@
             this.dataLayoutControl2.Controls.Add(this.simpleButton1);
             this.dataLayoutControl2.Controls.Add(this.rich_ItemDetails);
             this.dataLayoutControl2.Controls.Add(this.date_Item);
-            this.dataLayoutControl2.Controls.Add(this.txt_ItemTotalPrice);
             this.dataLayoutControl2.Controls.Add(this.txt_Quantity);
             this.dataLayoutControl2.Controls.Add(this.txt_Price);
             this.dataLayoutControl2.Controls.Add(this.txt_Item);
@@ -218,15 +213,15 @@
             this.rich_ItemDetails.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
             this.rich_ItemDetails.Cursor = System.Windows.Forms.Cursors.Default;
             this.rich_ItemDetails.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel;
-            this.rich_ItemDetails.Location = new System.Drawing.Point(92, 238);
+            this.rich_ItemDetails.Location = new System.Drawing.Point(79, 210);
             this.rich_ItemDetails.Name = "rich_ItemDetails";
-            this.rich_ItemDetails.Size = new System.Drawing.Size(282, 66);
+            this.rich_ItemDetails.Size = new System.Drawing.Size(295, 69);
             this.rich_ItemDetails.TabIndex = 0;
             // 
             // date_Item
             // 
             this.date_Item.EditValue = null;
-            this.date_Item.Location = new System.Drawing.Point(92, 200);
+            this.date_Item.Location = new System.Drawing.Point(79, 172);
             this.date_Item.Name = "date_Item";
             this.date_Item.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.date_Item.Properties.Appearance.Options.UseFont = true;
@@ -234,47 +229,37 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date_Item.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_Item.Size = new System.Drawing.Size(282, 24);
+            this.date_Item.Size = new System.Drawing.Size(295, 24);
             this.date_Item.StyleController = this.dataLayoutControl2;
             this.date_Item.TabIndex = 13;
             // 
-            // txt_ItemTotalPrice
-            // 
-            this.txt_ItemTotalPrice.Location = new System.Drawing.Point(92, 162);
-            this.txt_ItemTotalPrice.Name = "txt_ItemTotalPrice";
-            this.txt_ItemTotalPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txt_ItemTotalPrice.Properties.Appearance.Options.UseFont = true;
-            this.txt_ItemTotalPrice.Size = new System.Drawing.Size(282, 24);
-            this.txt_ItemTotalPrice.StyleController = this.dataLayoutControl2;
-            this.txt_ItemTotalPrice.TabIndex = 12;
-            // 
             // txt_Quantity
             // 
-            this.txt_Quantity.Location = new System.Drawing.Point(92, 124);
+            this.txt_Quantity.Location = new System.Drawing.Point(79, 124);
             this.txt_Quantity.Name = "txt_Quantity";
             this.txt_Quantity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Quantity.Properties.Appearance.Options.UseFont = true;
-            this.txt_Quantity.Size = new System.Drawing.Size(282, 24);
+            this.txt_Quantity.Size = new System.Drawing.Size(295, 24);
             this.txt_Quantity.StyleController = this.dataLayoutControl2;
             this.txt_Quantity.TabIndex = 11;
             // 
             // txt_Price
             // 
-            this.txt_Price.Location = new System.Drawing.Point(92, 86);
+            this.txt_Price.Location = new System.Drawing.Point(79, 86);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Price.Properties.Appearance.Options.UseFont = true;
-            this.txt_Price.Size = new System.Drawing.Size(282, 24);
+            this.txt_Price.Size = new System.Drawing.Size(295, 24);
             this.txt_Price.StyleController = this.dataLayoutControl2;
             this.txt_Price.TabIndex = 10;
             // 
             // txt_Item
             // 
-            this.txt_Item.Location = new System.Drawing.Point(92, 50);
+            this.txt_Item.Location = new System.Drawing.Point(79, 50);
             this.txt_Item.Name = "txt_Item";
             this.txt_Item.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Item.Properties.Appearance.Options.UseFont = true;
-            this.txt_Item.Size = new System.Drawing.Size(282, 24);
+            this.txt_Item.Size = new System.Drawing.Size(295, 24);
             this.txt_Item.StyleController = this.dataLayoutControl2;
             this.txt_Item.TabIndex = 9;
             // 
@@ -304,7 +289,6 @@
             this.emptySpaceItem6,
             this.layoutControlItem5,
             this.emptySpaceItem7,
-            this.layoutControlItem6,
             this.emptySpaceItem8,
             this.layoutControlItem7,
             this.emptySpaceItem9,
@@ -359,7 +343,7 @@
             this.Item.Name = "Item";
             this.Item.Size = new System.Drawing.Size(366, 26);
             this.Item.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.Item.TextSize = new System.Drawing.Size(68, 18);
+            this.Item.TextSize = new System.Drawing.Size(55, 18);
             // 
             // emptySpaceItem5
             // 
@@ -378,7 +362,7 @@
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(366, 28);
             this.layoutControlItem4.Text = "Price";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(68, 18);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(55, 18);
             // 
             // emptySpaceItem6
             // 
@@ -397,7 +381,7 @@
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(366, 28);
             this.layoutControlItem5.Text = "Quantity";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(68, 18);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(55, 18);
             // 
             // emptySpaceItem7
             // 
@@ -407,21 +391,10 @@
             this.emptySpaceItem7.Size = new System.Drawing.Size(366, 10);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem6.Control = this.txt_ItemTotalPrice;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 150);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(366, 28);
-            this.layoutControlItem6.Text = "Total Price";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(68, 18);
-            // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 178);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 150);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(366, 10);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -431,16 +404,16 @@
             this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem7.Control = this.date_Item;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 188);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 160);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(366, 28);
             this.layoutControlItem7.Text = "Date";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(68, 18);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(55, 18);
             // 
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 216);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 188);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
             this.emptySpaceItem9.Size = new System.Drawing.Size(366, 10);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -450,18 +423,18 @@
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.Control = this.rich_ItemDetails;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 226);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 198);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(366, 70);
+            this.layoutControlItem8.Size = new System.Drawing.Size(366, 73);
             this.layoutControlItem8.Text = "Details";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(68, 18);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(55, 18);
             // 
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 296);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 271);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
-            this.emptySpaceItem10.Size = new System.Drawing.Size(366, 311);
+            this.emptySpaceItem10.Size = new System.Drawing.Size(366, 336);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
@@ -659,7 +632,6 @@
             this.dataLayoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.date_Item.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Item.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ItemTotalPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Quantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Item.Properties)).EndInit();
@@ -674,7 +646,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
@@ -716,7 +687,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraRichEdit.RichEditControl rich_ItemDetails;
         private DevExpress.XtraEditors.DateEdit date_Item;
-        private DevExpress.XtraEditors.TextEdit txt_ItemTotalPrice;
         private DevExpress.XtraEditors.TextEdit txt_Quantity;
         private DevExpress.XtraEditors.TextEdit txt_Price;
         private DevExpress.XtraEditors.TextEdit txt_Item;
@@ -726,7 +696,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;

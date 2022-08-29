@@ -23,7 +23,7 @@ namespace Battery.Configuration
             //_itemCollection = _liteDB.GetCollection<ItemModel>("items");
         }
 
-
+        
         public  ICollection GetAllTemplate()
         {
             return _invoiceCollection.Query().OrderByDescending(x => x.Id).ToList();

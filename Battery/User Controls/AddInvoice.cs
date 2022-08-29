@@ -20,17 +20,22 @@ namespace Battery.User_Controls
 
 
         private readonly ILiteCollection<InvoiceModel> data;
+        private readonly ILiteCollection<ItemModel> itemData;
         List<InvoiceModel> _invoice = new List<InvoiceModel>();
         private dynamic curr;
         public AddInvoice()
         {
-
             InitializeComponent();
             ResetForm();
-            var db =  config._liteDB;
+            var db = config._liteDB;
             data = db.GetCollection<InvoiceModel>("Invoices");
+            itemData = db.GetCollection<ItemModel>("Items");
             gridControl1.DataSource = data.Query().OrderByDescending(x => x.Id).ToList();
-
+            txt_Item.Properties.DataSource = itemData.Query().ToList();
+        }
+        public void refreshData()
+        {
+            txt_Item.Properties.DataSource = itemData.Query().ToList();
         }
 
         internal void show()
@@ -43,9 +48,9 @@ namespace Battery.User_Controls
 
             // Get a collection (or create, if doesn't exist)
             var col = data;
-            if (txt_Name.Text == "" || txt_Price.Text == "0")
+            if (txt_Name.Text == "" || txt_Price.Text == "0" || txt_Item.Text == "--please select item")
             {
-                MessageBox.Show("Name and Price cannot be empty!");
+                MessageBox.Show("Name, Item and Price cannot be empty!");
             }
             else
             {
@@ -56,11 +61,17 @@ namespace Battery.User_Controls
                     Phone = txt_Phone.Text,
                     Item = txt_Item.Text.ToString() ?? "",
                     Price = long.Parse(txt_Price.Text),
+                    Quantity = int.Parse(txt_Quantity.Text),
                     Paid = long.Parse(txt_Paid.Text),
                     Date = date_Invoice.DateTime,
                     Details = txt_Details.Text.ToString() ?? "",
 
                 };
+                var ItemId = int.Parse(txt_Item.EditValue.ToString());
+
+                var item = itemData.FindOne(x => x.Id == ItemId);
+                if (item != null) item.ItemQuatity = item.ItemQuatity - int.Parse(txt_Quantity.Text);
+                itemData.Update(item);
                 statusChange(invoice);
                 col.Insert(invoice);
                 RefreshData();
@@ -73,7 +84,7 @@ namespace Battery.User_Controls
 
             if (inv != null)
             {
-                if (inv.Paid > 0 && inv.Paid < inv.Price)
+                if (inv.Paid > 0 && inv.Paid < inv.TotalPrice)
                 {
                     inv.Status = status.PartialPaid;
                 }
@@ -81,11 +92,11 @@ namespace Battery.User_Controls
                 {
                     inv.Status = status.UnPaid;
                 }
-                else if (inv.Paid == inv.Price)
+                else if (inv.Paid == inv.TotalPrice)
                 {
                     inv.Status = status.Paid;
                 }
-                else if (inv.Paid > inv.Price)
+                else if (inv.Paid > inv.TotalPrice)
                 {
                     inv.Status = status.OverPaid;
                 }
@@ -106,6 +117,7 @@ namespace Battery.User_Controls
              txt_Phone.Text = null;
             txt_Price.Text = null;
             txt_Paid.Text = null;
+            txt_Quantity.Text = null;
             date_Invoice.DateTime = DateTime.Today;
         }
 
@@ -169,7 +181,7 @@ namespace Battery.User_Controls
             GridView currentView = sender as GridView;
             if (e.Column.FieldName == "Status")
             {
-                if (e.Column.AbsoluteIndex == 9)
+                if (e.Column.AbsoluteIndex == 11)
                 {
                     if (e.CellValue.ToString() == "UnPaid")
                     {

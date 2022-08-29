@@ -25,7 +25,10 @@ namespace Battery.Models
         public string Phone { get; set; }
         public double Price { get; set; } = 0;
         public double Paid { get; set; } = 0;
-        public double Debit => Price - Paid;
+       
+        public int Quantity { get; set; }
+        public double TotalPrice => Price * Quantity;
+        public double Debit => TotalPrice - Paid;
         public DateTime Date { get; set; }
         public string Details { get; set; }
         public status Status { get; set; }

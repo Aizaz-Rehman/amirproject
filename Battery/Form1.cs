@@ -18,6 +18,7 @@ namespace Battery
         {
             InitializeComponent();
             config config = new config();
+
             addItem1.Hide();
             addInvoice1.Show();
             addInvoice1.Dock = DockStyle.Fill;
@@ -27,6 +28,7 @@ namespace Battery
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             addItem1.Hide();
+            addInvoice1.refreshData();
             addInvoice1.Show();
             addInvoice1.Dock = DockStyle.Fill;
             addInvoice1.BringToFront();
@@ -36,6 +38,7 @@ namespace Battery
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             addInvoice1.Hide();
+            addItem1.refreshData();
             addItem1.Show();
             addItem1.Dock = DockStyle.Fill;
             addItem1.BringToFront();
