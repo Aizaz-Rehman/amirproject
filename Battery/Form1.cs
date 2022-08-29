@@ -35,6 +35,7 @@ namespace Battery
             addItem1.Dock = DockStyle.Fill;
             addItem1.BringToFront();
         }
-      
+
+       
     }
 }
