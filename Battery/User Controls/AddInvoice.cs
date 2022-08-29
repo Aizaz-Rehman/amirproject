@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,21 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Battery
+namespace Battery.User_Controls
 {
-    public partial class AddInvoice : DevExpress.XtraEditors.XtraUserControl
+    public partial class AddInvoice : UserControl
     {
-        private static AddInvoice _instance;
-        public static AddInvoice Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new AddInvoice();
-                return _instance;
-            }
-
-        }
         public AddInvoice()
         {
             InitializeComponent();

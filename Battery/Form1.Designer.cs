@@ -34,11 +34,9 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.container = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.addItem1 = new Battery.User_Controls.AddItem();
+            this.addInvoice1 = new Battery.User_Controls.AddInvoice();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.container)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -89,38 +87,38 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Pages";
             // 
-            // container
+            // addItem1
             // 
-            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(0, 193);
-            this.container.Name = "container";
-            this.container.Root = this.Root;
-            this.container.Size = new System.Drawing.Size(1207, 470);
-            this.container.TabIndex = 1;
-            this.container.Text = "dataLayoutControl1";
+            this.addItem1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addItem1.Location = new System.Drawing.Point(0, 193);
+            this.addItem1.Name = "addItem1";
+            this.addItem1.Size = new System.Drawing.Size(1207, 470);
+            this.addItem1.TabIndex = 7;
             // 
-            // Root
+            // addInvoice1
             // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1207, 470);
-            this.Root.TextVisible = false;
+            this.addInvoice1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addInvoice1.Location = new System.Drawing.Point(0, 193);
+            this.addInvoice1.Name = "addInvoice1";
+            this.addInvoice1.Size = new System.Drawing.Size(1207, 470);
+            this.addInvoice1.TabIndex = 9;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1207, 663);
-            this.Controls.Add(this.container);
+            this.Controls.Add(this.addInvoice1);
+            this.Controls.Add(this.addItem1);
             this.Controls.Add(this.ribbonControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.container)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,8 +131,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraDataLayout.DataLayoutControl container;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private User_Controls.AddItem addItem1;
+        private User_Controls.AddInvoice addInvoice1;
     }
 }
 

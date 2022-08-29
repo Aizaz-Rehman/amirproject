@@ -15,36 +15,26 @@ namespace Battery
         public Form1()
         {
             InitializeComponent();
-            if (!container.Controls.Contains(AddInvoice.Instance))
-            {
-                container.Controls.Add(AddInvoice.Instance);
-                AddInvoice.Instance.Dock = DockStyle.Fill;
-                AddInvoice.Instance.BringToFront();
-            }
-            AddInvoice.Instance.BringToFront();
+            addItem1.Hide();
+           
         }
-
+ 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (!container.Controls.Contains(AddInvoice.Instance))
-            {
-                container.Controls.Add(AddInvoice.Instance);
-                AddInvoice.Instance.Dock = DockStyle.Fill;
-                AddInvoice.Instance.BringToFront();
-            }
-            AddInvoice.Instance.BringToFront();
+            addItem1.Hide();
+            addInvoice1.Show();
+            addInvoice1.Dock = DockStyle.Fill;
+            addInvoice1.BringToFront();
+
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-            if (!container.Controls.Contains(AddItem.Instance))
-            {
-                container.Controls.Add(AddItem.Instance);
-                AddItem.Instance.Dock = DockStyle.Fill;
-                AddItem.Instance.BringToFront();
-            }
-            AddItem.Instance.BringToFront();
+            addInvoice1.Hide();
+            addItem1.Show();
+            addItem1.Dock = DockStyle.Fill;
+            addItem1.BringToFront();
         }
+      
     }
 }
