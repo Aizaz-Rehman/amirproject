@@ -1,4 +1,5 @@
-﻿using Battery.Models;
+﻿using Battery.Configuration;
+using Battery.Models;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using LiteDB;
@@ -26,7 +27,7 @@ namespace Battery.User_Controls
 
             InitializeComponent();
             ResetForm();
-            var db = new LiteDatabase(@"D:\Database\MyData.db");
+            var db =  config._liteDB;
             data = db.GetCollection<InvoiceModel>("Invoices");
             gridControl1.DataSource = data.Query().OrderByDescending(x => x.Id).ToList();
 

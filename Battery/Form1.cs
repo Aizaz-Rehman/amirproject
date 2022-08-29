@@ -1,4 +1,5 @@
-﻿using Battery.User_Controls;
+﻿using Battery.Configuration;
+using Battery.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,11 +13,15 @@ namespace Battery
 {
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public dynamic _dbo;
         public Form1()
         {
             InitializeComponent();
+            config config = new config();
             addItem1.Hide();
-           
+            addInvoice1.Show();
+            addInvoice1.Dock = DockStyle.Fill;
+            addInvoice1.BringToFront();
         }
  
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
