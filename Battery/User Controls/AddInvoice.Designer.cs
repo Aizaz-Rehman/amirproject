@@ -38,7 +38,7 @@
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dataLayoutControl3 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.txt_Details = new DevExpress.XtraRichEdit.RichEditControl();
+            this.txt_Detail = new System.Windows.Forms.RichTextBox();
             this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Clear = new DevExpress.XtraEditors.SimpleButton();
             this.date_Invoice = new DevExpress.XtraEditors.DateEdit();
@@ -184,7 +184,7 @@
             // 
             // dataLayoutControl3
             // 
-            this.dataLayoutControl3.Controls.Add(this.txt_Details);
+            this.dataLayoutControl3.Controls.Add(this.txt_Detail);
             this.dataLayoutControl3.Controls.Add(this.btn_Save);
             this.dataLayoutControl3.Controls.Add(this.btn_Clear);
             this.dataLayoutControl3.Controls.Add(this.date_Invoice);
@@ -204,14 +204,14 @@
             this.dataLayoutControl3.TabIndex = 0;
             this.dataLayoutControl3.Text = "dataLayoutControl3";
             // 
-            // txt_Details
+            // txt_Detail
             // 
-            this.txt_Details.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.txt_Details.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel;
-            this.txt_Details.Location = new System.Drawing.Point(79, 356);
-            this.txt_Details.Name = "txt_Details";
-            this.txt_Details.Size = new System.Drawing.Size(296, 68);
-            this.txt_Details.TabIndex = 0;
+            this.txt_Detail.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txt_Detail.Location = new System.Drawing.Point(79, 356);
+            this.txt_Detail.Name = "txt_Detail";
+            this.txt_Detail.Size = new System.Drawing.Size(296, 65);
+            this.txt_Detail.TabIndex = 16;
+            this.txt_Detail.Text = "";
             // 
             // btn_Save
             // 
@@ -263,6 +263,12 @@
             this.txt_Paid.Name = "txt_Paid";
             this.txt_Paid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Paid.Properties.Appearance.Options.UseFont = true;
+            this.txt_Paid.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_Paid.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txt_Paid.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Paid.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_Paid.Properties.MaskSettings.Set("mask", "d");
+            this.txt_Paid.Properties.NullText = "0";
             this.txt_Paid.Size = new System.Drawing.Size(296, 24);
             this.txt_Paid.StyleController = this.dataLayoutControl3;
             this.txt_Paid.TabIndex = 11;
@@ -273,6 +279,12 @@
             this.txt_Quantity.Name = "txt_Quantity";
             this.txt_Quantity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Quantity.Properties.Appearance.Options.UseFont = true;
+            this.txt_Quantity.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_Quantity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txt_Quantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Quantity.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_Quantity.Properties.MaskSettings.Set("mask", "d");
+            this.txt_Quantity.Properties.NullText = "1";
             this.txt_Quantity.Size = new System.Drawing.Size(296, 24);
             this.txt_Quantity.StyleController = this.dataLayoutControl3;
             this.txt_Quantity.TabIndex = 10;
@@ -283,6 +295,12 @@
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Price.Properties.Appearance.Options.UseFont = true;
+            this.txt_Price.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_Price.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txt_Price.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Price.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_Price.Properties.MaskSettings.Set("mask", "d");
+            this.txt_Price.Properties.NullText = "0";
             this.txt_Price.Size = new System.Drawing.Size(296, 24);
             this.txt_Price.StyleController = this.dataLayoutControl3;
             this.txt_Price.TabIndex = 9;
@@ -316,6 +334,11 @@
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Phone.Properties.Appearance.Options.UseFont = true;
+            this.txt_Phone.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_Phone.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txt_Phone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Phone.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_Phone.Properties.MaskSettings.Set("mask", "d");
             this.txt_Phone.Size = new System.Drawing.Size(296, 24);
             this.txt_Phone.StyleController = this.dataLayoutControl3;
             this.txt_Phone.TabIndex = 7;
@@ -465,9 +488,9 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 416);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 413);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(367, 119);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(367, 122);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
@@ -587,14 +610,12 @@
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem12.Control = this.txt_Details;
+            this.layoutControlItem12.Control = this.txt_Detail;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 344);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(367, 72);
+            this.layoutControlItem12.Size = new System.Drawing.Size(367, 69);
             this.layoutControlItem12.Text = "Details";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(55, 18);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(55, 16);
             // 
             // dataLayoutControl2
             // 
@@ -670,8 +691,9 @@
             this.colItem.FieldName = "Item";
             this.colItem.MinWidth = 25;
             this.colItem.Name = "colItem";
+            this.colItem.OptionsColumn.ReadOnly = true;
             this.colItem.Visible = true;
-            this.colItem.VisibleIndex = 2;
+            this.colItem.VisibleIndex = 3;
             this.colItem.Width = 116;
             // 
             // colPhone
@@ -680,7 +702,7 @@
             this.colPhone.MinWidth = 25;
             this.colPhone.Name = "colPhone";
             this.colPhone.Visible = true;
-            this.colPhone.VisibleIndex = 3;
+            this.colPhone.VisibleIndex = 2;
             this.colPhone.Width = 85;
             // 
             // colPrice
@@ -688,6 +710,7 @@
             this.colPrice.FieldName = "Price";
             this.colPrice.MinWidth = 25;
             this.colPrice.Name = "colPrice";
+            this.colPrice.OptionsColumn.ReadOnly = true;
             this.colPrice.Visible = true;
             this.colPrice.VisibleIndex = 4;
             this.colPrice.Width = 32;
@@ -698,6 +721,7 @@
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.MinWidth = 25;
             this.colQuantity.Name = "colQuantity";
+            this.colQuantity.OptionsColumn.ReadOnly = true;
             this.colQuantity.Visible = true;
             this.colQuantity.VisibleIndex = 5;
             this.colQuantity.Width = 47;
@@ -708,6 +732,7 @@
             this.totalPrice.FieldName = "TotalPrice";
             this.totalPrice.MinWidth = 25;
             this.totalPrice.Name = "totalPrice";
+            this.totalPrice.OptionsColumn.ReadOnly = true;
             this.totalPrice.Visible = true;
             this.totalPrice.VisibleIndex = 6;
             this.totalPrice.Width = 62;
@@ -717,6 +742,7 @@
             this.colPaid.FieldName = "Paid";
             this.colPaid.MinWidth = 25;
             this.colPaid.Name = "colPaid";
+            this.colPaid.OptionsColumn.ReadOnly = true;
             this.colPaid.Visible = true;
             this.colPaid.VisibleIndex = 7;
             this.colPaid.Width = 59;
@@ -733,6 +759,8 @@
             // 
             // colDate
             // 
+            this.colDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colDate.FieldName = "Date";
             this.colDate.MinWidth = 25;
             this.colDate.Name = "colDate";
@@ -754,6 +782,7 @@
             this.colStatus.FieldName = "Status";
             this.colStatus.MinWidth = 25;
             this.colStatus.Name = "colStatus";
+            this.colStatus.OptionsColumn.ReadOnly = true;
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 11;
             this.colStatus.Width = 55;
@@ -941,10 +970,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStatus;
         private DevExpress.XtraGrid.Columns.GridColumn delete;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_delete;
-        private DevExpress.XtraRichEdit.RichEditControl txt_Details;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private System.Windows.Forms.BindingSource itemModelBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn totalPrice;
+        private System.Windows.Forms.RichTextBox txt_Detail;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

@@ -12,7 +12,7 @@ namespace Battery.Models
         public string Item { get; set; }
         public long Price { get; set; }
         public int ItemQuatity { get; set; }
-        public long TotalPrice => Price * ItemQuatity;
+        public long StockPrice => Price * ItemQuatity;
         public DateTime itemDate { get; set; }  
         public string itemDetail { get; set; }
     }

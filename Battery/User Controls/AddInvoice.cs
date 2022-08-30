@@ -31,11 +31,11 @@ namespace Battery.User_Controls
             data = db.GetCollection<InvoiceModel>("Invoices");
             itemData = db.GetCollection<ItemModel>("Items");
             gridControl1.DataSource = data.Query().OrderByDescending(x => x.Id).ToList();
-            txt_Item.Properties.DataSource = itemData.Query().ToList();
+            txt_Item.Properties.DataSource = itemData.Query().Where(x => x.ItemQuatity >0).ToList();
         }
         public void refreshData()
         {
-            txt_Item.Properties.DataSource = itemData.Query().ToList();
+            txt_Item.Properties.DataSource = itemData.Query().Where(x => x.ItemQuatity >0).ToList();
         }
 
         internal void show()
@@ -48,7 +48,7 @@ namespace Battery.User_Controls
 
             // Get a collection (or create, if doesn't exist)
             var col = data;
-            if (txt_Name.Text == "" || txt_Price.Text == "0" || txt_Item.Text == "--please select item")
+            if (txt_Name.Text == "" || txt_Price.Text == "0" || txt_Item.Text == "--select item--")
             {
                 MessageBox.Show("Name, Item and Price cannot be empty!");
             }
@@ -64,11 +64,10 @@ namespace Battery.User_Controls
                     Quantity = int.Parse(txt_Quantity.Text),
                     Paid = long.Parse(txt_Paid.Text),
                     Date = date_Invoice.DateTime,
-                    Details = txt_Details.Text.ToString() ?? "",
+                    Details = txt_Detail.Text.ToString() ?? "",
 
                 };
                 var ItemId = int.Parse(txt_Item.EditValue.ToString());
-
                 var item = itemData.FindOne(x => x.Id == ItemId);
                 if (item != null) item.ItemQuatity = item.ItemQuatity - int.Parse(txt_Quantity.Text);
                 itemData.Update(item);
@@ -77,7 +76,6 @@ namespace Battery.User_Controls
                 RefreshData();
                 ResetForm();
             }
-
         }
         private void statusChange(InvoiceModel inv)
         {
@@ -113,11 +111,11 @@ namespace Battery.User_Controls
             txt_Name.Text = null;
             txt_Address.Text = null;
             txt_Item.Text = null;
-            txt_Details.Text = null;
+            txt_Detail.Text = null;
              txt_Phone.Text = null;
             txt_Price.Text = null;
             txt_Paid.Text = null;
-            txt_Quantity.Text = null;
+            txt_Quantity.Text = "--select item--";
             date_Invoice.DateTime = DateTime.Today;
         }
 
@@ -166,12 +164,20 @@ namespace Battery.User_Controls
 
         private void btn_delete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            var dlg = YesNo("Are You Sure?", "Delete");
-            if (dlg == DialogResult.No) return;
+           
             curr = gridView1.GetFocusedRow();
             long rowId = (long)curr.Id;
-            data.Delete(rowId);
-            RefreshData();
+            if (curr.Status == status.Paid || curr.Status == status.OverPaid)
+            {
+                var dlg = YesNo("Are You Sure?", "Delete");
+                if (dlg == DialogResult.No) return;
+                data.Delete(rowId);
+                RefreshData();
+            }
+            else
+            {
+                MessageBox.Show("The Person have debit to pay", "Warning");
+            }
         }
 
      

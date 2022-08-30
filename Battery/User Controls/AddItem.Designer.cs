@@ -38,9 +38,9 @@
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.dataLayoutControl2 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.rich_ItemDetails = new System.Windows.Forms.RichTextBox();
             this.btn_ItemAdd = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.rich_ItemDetails = new DevExpress.XtraRichEdit.RichEditControl();
             this.date_Item = new DevExpress.XtraEditors.DateEdit();
             this.txt_Quantity = new DevExpress.XtraEditors.TextEdit();
             this.txt_Price = new DevExpress.XtraEditors.TextEdit();
@@ -60,10 +60,10 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dataLayoutControl3 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.itemModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -109,10 +109,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl3)).BeginInit();
             this.dataLayoutControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -156,9 +156,9 @@
             // 
             // dataLayoutControl2
             // 
+            this.dataLayoutControl2.Controls.Add(this.rich_ItemDetails);
             this.dataLayoutControl2.Controls.Add(this.btn_ItemAdd);
             this.dataLayoutControl2.Controls.Add(this.simpleButton1);
-            this.dataLayoutControl2.Controls.Add(this.rich_ItemDetails);
             this.dataLayoutControl2.Controls.Add(this.date_Item);
             this.dataLayoutControl2.Controls.Add(this.txt_Quantity);
             this.dataLayoutControl2.Controls.Add(this.txt_Price);
@@ -171,6 +171,15 @@
             this.dataLayoutControl2.Size = new System.Drawing.Size(386, 680);
             this.dataLayoutControl2.TabIndex = 0;
             this.dataLayoutControl2.Text = "dataLayoutControl2";
+            // 
+            // rich_ItemDetails
+            // 
+            this.rich_ItemDetails.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.rich_ItemDetails.Location = new System.Drawing.Point(79, 210);
+            this.rich_ItemDetails.Name = "rich_ItemDetails";
+            this.rich_ItemDetails.Size = new System.Drawing.Size(295, 98);
+            this.rich_ItemDetails.TabIndex = 16;
+            this.rich_ItemDetails.Text = "";
             // 
             // btn_ItemAdd
             // 
@@ -208,16 +217,6 @@
             this.simpleButton1.Text = "Clear";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // rich_ItemDetails
-            // 
-            this.rich_ItemDetails.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.rich_ItemDetails.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rich_ItemDetails.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel;
-            this.rich_ItemDetails.Location = new System.Drawing.Point(79, 210);
-            this.rich_ItemDetails.Name = "rich_ItemDetails";
-            this.rich_ItemDetails.Size = new System.Drawing.Size(295, 69);
-            this.rich_ItemDetails.TabIndex = 0;
-            // 
             // date_Item
             // 
             this.date_Item.EditValue = null;
@@ -235,20 +234,34 @@
             // 
             // txt_Quantity
             // 
+            this.txt_Quantity.EditValue = "0";
             this.txt_Quantity.Location = new System.Drawing.Point(79, 124);
             this.txt_Quantity.Name = "txt_Quantity";
             this.txt_Quantity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Quantity.Properties.Appearance.Options.UseFont = true;
+            this.txt_Quantity.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_Quantity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txt_Quantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.txt_Quantity.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.txt_Quantity.Properties.MaskSettings.Set("mask", "99999");
+            this.txt_Quantity.Properties.NullText = "0";
             this.txt_Quantity.Size = new System.Drawing.Size(295, 24);
             this.txt_Quantity.StyleController = this.dataLayoutControl2;
             this.txt_Quantity.TabIndex = 11;
             // 
             // txt_Price
             // 
+            this.txt_Price.EditValue = "0";
             this.txt_Price.Location = new System.Drawing.Point(79, 86);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Price.Properties.Appearance.Options.UseFont = true;
+            this.txt_Price.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_Price.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txt_Price.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.txt_Price.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.txt_Price.Properties.MaskSettings.Set("mask", "99999");
+            this.txt_Price.Properties.NullText = "0";
             this.txt_Price.Size = new System.Drawing.Size(295, 24);
             this.txt_Price.StyleController = this.dataLayoutControl2;
             this.txt_Price.TabIndex = 10;
@@ -292,10 +305,10 @@
             this.emptySpaceItem8,
             this.layoutControlItem7,
             this.emptySpaceItem9,
-            this.layoutControlItem8,
             this.emptySpaceItem10,
             this.layoutControlItem9,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(386, 680);
             this.layoutControlGroup1.TextVisible = false;
@@ -418,23 +431,12 @@
             this.emptySpaceItem9.Size = new System.Drawing.Size(366, 10);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem8.Control = this.rich_ItemDetails;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 198);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(366, 73);
-            this.layoutControlItem8.Text = "Details";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(55, 18);
-            // 
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 271);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 300);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
-            this.emptySpaceItem10.Size = new System.Drawing.Size(366, 336);
+            this.emptySpaceItem10.Size = new System.Drawing.Size(366, 307);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem9
@@ -454,6 +456,15 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(183, 53);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.rich_ItemDetails;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 198);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(366, 102);
+            this.layoutControlItem6.Text = "Details";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(55, 16);
             // 
             // dataLayoutControl3
             // 
@@ -510,6 +521,7 @@
             // 
             // colPrice
             // 
+            this.colPrice.Caption = "Unit Price";
             this.colPrice.FieldName = "Price";
             this.colPrice.MinWidth = 25;
             this.colPrice.Name = "colPrice";
@@ -519,6 +531,7 @@
             // 
             // colItemQuatity
             // 
+            this.colItemQuatity.Caption = "Quantity";
             this.colItemQuatity.FieldName = "ItemQuatity";
             this.colItemQuatity.MinWidth = 25;
             this.colItemQuatity.Name = "colItemQuatity";
@@ -528,6 +541,9 @@
             // 
             // colTotalPrice
             // 
+            this.colTotalPrice.AppearanceCell.Options.UseTextOptions = true;
+            this.colTotalPrice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colTotalPrice.Caption = "Stock Price";
             this.colTotalPrice.FieldName = "TotalPrice";
             this.colTotalPrice.MinWidth = 25;
             this.colTotalPrice.Name = "colTotalPrice";
@@ -538,6 +554,9 @@
             // 
             // colitemDate
             // 
+            this.colitemDate.AppearanceCell.Options.UseTextOptions = true;
+            this.colitemDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colitemDate.Caption = "Date";
             this.colitemDate.FieldName = "itemDate";
             this.colitemDate.MinWidth = 25;
             this.colitemDate.Name = "colitemDate";
@@ -547,6 +566,7 @@
             // 
             // colitemDetail
             // 
+            this.colitemDetail.Caption = "Details";
             this.colitemDetail.FieldName = "itemDetail";
             this.colitemDetail.MinWidth = 25;
             this.colitemDetail.Name = "colitemDetail";
@@ -649,10 +669,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl3)).EndInit();
             this.dataLayoutControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -685,7 +705,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
-        private DevExpress.XtraRichEdit.RichEditControl rich_ItemDetails;
         private DevExpress.XtraEditors.DateEdit date_Item;
         private DevExpress.XtraEditors.TextEdit txt_Quantity;
         private DevExpress.XtraEditors.TextEdit txt_Price;
@@ -699,7 +718,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
         private DevExpress.XtraEditors.SimpleButton btn_ItemAdd;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
@@ -714,5 +732,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colitemDetail;
         private DevExpress.XtraGrid.Columns.GridColumn delete;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_Delete;
+        private System.Windows.Forms.RichTextBox rich_ItemDetails;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }
