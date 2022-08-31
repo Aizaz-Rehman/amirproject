@@ -15,9 +15,9 @@ namespace Battery.Configuration
         private ILiteCollection<InvoiceModel> _invoiceCollection;
         private ILiteCollection<ItemModel> _itemCollection;
 
-        public void LiteDbHelper()
+        public  config()
         {
-            _liteDB = new LiteDatabase(@"D:\Database\MyData.db");
+           // _liteDB = new LiteDatabase(@"D:\Database\MyData.db");
             
             //_invoiceCollection = _liteDB.GetCollection<InvoiceModel>("invoices");
             //_itemCollection = _liteDB.GetCollection<ItemModel>("items");
