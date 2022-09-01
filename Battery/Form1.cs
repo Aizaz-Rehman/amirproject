@@ -1,5 +1,6 @@
 ﻿using Battery.Configuration;
 using Battery.User_Controls;
+using MyStore.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,14 @@ namespace Battery
             addItem1.BringToFront();
         }
 
-       
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new About().ShowDialog();
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new MyStore.Forms.Help().ShowDialog();   
+        }
     }
 }

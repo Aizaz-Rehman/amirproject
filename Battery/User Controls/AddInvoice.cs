@@ -21,6 +21,8 @@ namespace Battery.User_Controls
 
         private readonly ILiteCollection<InvoiceModel> data;
         private readonly ILiteCollection<ItemModel> itemData;
+        private readonly ILiteCollection<DailySale> saleData;
+       
         List<InvoiceModel> _invoice = new List<InvoiceModel>();
         private dynamic curr;
         public AddInvoice()
@@ -30,8 +32,9 @@ namespace Battery.User_Controls
             var db = config._liteDB;
             data = db.GetCollection<InvoiceModel>("Invoices");
             itemData = db.GetCollection<ItemModel>("Items");
+            saleData = db.GetCollection<DailySale>("DailySale");
             gridControl1.DataSource = data.Query().OrderByDescending(x => x.Id).ToList();
-            txt_Item.Properties.DataSource = itemData.Query().Where(x => x.ItemQuatity >0).ToList();
+            txt_Item.Properties.DataSource = itemData.Query().Where(x => x.ItemQuatity > 0).ToList();
         }
         public void refreshData()
         {
@@ -60,9 +63,9 @@ namespace Battery.User_Controls
                     Address = txt_Address.Text.ToString() ?? "",
                     Phone = txt_Phone.Text,
                     Item = txt_Item.Text.ToString() ?? "",
-                    Price = long.Parse(txt_Price.Text),
+                    Price = int.Parse(txt_Price.Text),
                     Quantity = int.Parse(txt_Quantity.Text),
-                    Paid = long.Parse(txt_Paid.Text),
+                    Paid = int.Parse(txt_Paid.Text),
                     Date = date_Invoice.DateTime,
                     Details = txt_Detail.Text.ToString() ?? "",
 
@@ -72,6 +75,9 @@ namespace Battery.User_Controls
                 if (item != null) item.ItemQuatity = item.ItemQuatity - int.Parse(txt_Quantity.Text);
                 itemData.Update(item);
                 statusChange(invoice);
+               
+       
+
                 col.Insert(invoice);
                 RefreshData();
                 ResetForm();
@@ -115,7 +121,7 @@ namespace Battery.User_Controls
              txt_Phone.Text = null;
             txt_Price.Text = null;
             txt_Paid.Text = null;
-            txt_Quantity.Text = "--select item--";
+            txt_Quantity.Text = null;
             date_Invoice.DateTime = DateTime.Today;
         }
 
@@ -176,7 +182,11 @@ namespace Battery.User_Controls
             }
             else
             {
-                MessageBox.Show("The Person have debit to pay", "Warning");
+                var dlg = YesNo("The person has debit to pay. Delete anyway?", "Delete");
+                if (dlg == DialogResult.No) return;
+                data.Delete(rowId);
+                RefreshData();
+                //MessageBox.Show("The Person has debit to pay", "Warning");
             }
         }
 
@@ -228,6 +238,11 @@ namespace Battery.User_Controls
                 data.Update((InvoiceModel)curr);
 
             }
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            ResetForm();
         }
     }
 }

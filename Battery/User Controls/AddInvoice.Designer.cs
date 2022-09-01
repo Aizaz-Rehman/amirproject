@@ -241,6 +241,7 @@
             this.btn_Clear.StyleController = this.dataLayoutControl3;
             this.btn_Clear.TabIndex = 14;
             this.btn_Clear.Text = "Clear";
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
             // 
             // date_Invoice
             // 
@@ -317,7 +318,8 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Item", "Item")});
             this.txt_Item.Properties.DataSource = this.itemModelBindingSource;
             this.txt_Item.Properties.DisplayMember = "Item";
-            this.txt_Item.Properties.NullText = "--select item--";
+            this.txt_Item.Properties.DropDownRows = 10;
+            this.txt_Item.Properties.NullText = "";
             this.txt_Item.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txt_Item.Properties.ValueMember = "Id";
             this.txt_Item.Size = new System.Drawing.Size(296, 24);
@@ -728,6 +730,8 @@
             // 
             // totalPrice
             // 
+            this.totalPrice.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.totalPrice.AppearanceCell.Options.UseFont = true;
             this.totalPrice.Caption = "Total Price";
             this.totalPrice.FieldName = "TotalPrice";
             this.totalPrice.MinWidth = 25;
@@ -739,10 +743,11 @@
             // 
             // colPaid
             // 
+            this.colPaid.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.colPaid.AppearanceCell.Options.UseFont = true;
             this.colPaid.FieldName = "Paid";
             this.colPaid.MinWidth = 25;
             this.colPaid.Name = "colPaid";
-            this.colPaid.OptionsColumn.ReadOnly = true;
             this.colPaid.Visible = true;
             this.colPaid.VisibleIndex = 7;
             this.colPaid.Width = 59;
@@ -779,6 +784,8 @@
             // 
             // colStatus
             // 
+            this.colStatus.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.colStatus.AppearanceCell.Options.UseFont = true;
             this.colStatus.FieldName = "Status";
             this.colStatus.MinWidth = 25;
             this.colStatus.Name = "colStatus";

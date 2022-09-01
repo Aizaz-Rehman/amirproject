@@ -241,9 +241,8 @@
             this.txt_Quantity.Properties.Appearance.Options.UseFont = true;
             this.txt_Quantity.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_Quantity.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txt_Quantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.txt_Quantity.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
-            this.txt_Quantity.Properties.MaskSettings.Set("mask", "99999");
+            this.txt_Quantity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Quantity.Properties.MaskSettings.Set("mask", "d");
             this.txt_Quantity.Properties.NullText = "0";
             this.txt_Quantity.Size = new System.Drawing.Size(295, 24);
             this.txt_Quantity.StyleController = this.dataLayoutControl2;
@@ -258,9 +257,8 @@
             this.txt_Price.Properties.Appearance.Options.UseFont = true;
             this.txt_Price.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_Price.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txt_Price.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.txt_Price.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
-            this.txt_Price.Properties.MaskSettings.Set("mask", "99999");
+            this.txt_Price.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Price.Properties.MaskSettings.Set("mask", "d");
             this.txt_Price.Properties.NullText = "0";
             this.txt_Price.Size = new System.Drawing.Size(295, 24);
             this.txt_Price.StyleController = this.dataLayoutControl2;
@@ -544,7 +542,7 @@
             this.colTotalPrice.AppearanceCell.Options.UseTextOptions = true;
             this.colTotalPrice.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colTotalPrice.Caption = "Stock Price";
-            this.colTotalPrice.FieldName = "TotalPrice";
+            this.colTotalPrice.FieldName = "StockPrice";
             this.colTotalPrice.MinWidth = 25;
             this.colTotalPrice.Name = "colTotalPrice";
             this.colTotalPrice.OptionsColumn.ReadOnly = true;

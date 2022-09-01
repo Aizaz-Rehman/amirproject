@@ -203,3 +203,6 @@ E:\Mobivone\amirproject\Battery\bin\Debug\ru\DevExpress.XtraRichEdit.v21.2.resou
 E:\Mobivone\amirproject\Battery\bin\Debug\LiteDB.dll
 E:\Mobivone\amirproject\Battery\bin\Debug\LiteDB.xml
 E:\Mobivone\amirproject\Battery\obj\Debug\Battery.User_Controls.AddInvoice.resources
+E:\Mobivone\amirproject\Battery\obj\Debug\MyStore.Forms.About.resources
+E:\Mobivone\amirproject\Battery\obj\Debug\MyStore.Forms.Help.resources
+E:\Mobivone\amirproject\Battery\obj\Debug\Battery.User_Controls.DailySale.resources

@@ -65,25 +65,25 @@ namespace Battery.User_Controls
         private void statusChange(InvoiceModel inv)
         {
 
-            if (inv != null)
-            {
-                if (inv.Paid > 0 && inv.Paid < inv.Price)
-                {
-                    inv.Status = status.PartialPaid;
-                }
-                else if (inv.Paid == 0)
-                {
-                    inv.Status = status.UnPaid;
-                }
-                else if (inv.Paid == inv.Price)
-                {
-                    inv.Status = status.Paid;
-                }
-                else if (inv.Paid > inv.Price)
-                {
-                    inv.Status = status.OverPaid;
-                }
-            }
+            //if (inv != null)
+            //{
+            //    if (inv.Paid > 0 && inv.Paid < inv.Price)
+            //    {
+            //        inv.Status = status.PartialPaid;
+            //    }
+            //    else if (inv.Paid == 0)
+            //    {
+            //        inv.Status = status.UnPaid;
+            //    }
+            //    else if (inv.Paid == inv.Price)
+            //    {
+            //        inv.Status = status.Paid;
+            //    }
+            //    else if (inv.Paid > inv.Price)
+            //    {
+            //        inv.Status = status.OverPaid;
+            //    }
+            //}
         }
         public void RefreshData()
         {

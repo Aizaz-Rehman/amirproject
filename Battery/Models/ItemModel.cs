@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Battery.Models
 {
-    internal class ItemModel
+
+    public class ItemModel
     {
         public int Id { get; set; }
         public string Item { get; set; }
