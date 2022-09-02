@@ -54,5 +54,15 @@ namespace Battery
         {
             new MyStore.Forms.Help().ShowDialog();   
         }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            addInvoice1.Hide();
+            addItem1.Hide();
+            dailySale1.refreshData();
+            dailySale1.Show();
+            dailySale1.Dock = DockStyle.Fill;
+            dailySale1.BringToFront();
+        }
     }
 }

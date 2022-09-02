@@ -101,7 +101,7 @@
             // 
             // dailySaleBindingSource
             // 
-            this.dailySaleBindingSource.DataSource = typeof(Battery.Models.DailySale);
+            this.dailySaleBindingSource.DataSource = typeof(Battery.Models.DailySaleModel);
             // 
             // colDate
             // 

@@ -12,8 +12,7 @@ namespace Battery.Configuration
     internal class config
     {
         public static LiteDatabase _liteDB = new LiteDatabase(@"D:\Database\MyData.db");
-        private ILiteCollection<InvoiceModel> _invoiceCollection;
-        private ILiteCollection<ItemModel> _itemCollection;
+   
 
         public  config()
         {

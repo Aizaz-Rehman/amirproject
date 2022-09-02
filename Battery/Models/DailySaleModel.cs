@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Battery.Models
 {
-    public class DailySale
+    public class DailySaleModel
     {
         public int ID { get; set; }
         public DateTime Date { get; set; }

@@ -21,7 +21,7 @@ namespace Battery.User_Controls
 
         private readonly ILiteCollection<InvoiceModel> data;
         private readonly ILiteCollection<ItemModel> itemData;
-        private readonly ILiteCollection<DailySale> saleData;
+        private readonly ILiteCollection<DailySaleModel> saleData;
        
         List<InvoiceModel> _invoice = new List<InvoiceModel>();
         private dynamic curr;
@@ -32,7 +32,7 @@ namespace Battery.User_Controls
             var db = config._liteDB;
             data = db.GetCollection<InvoiceModel>("Invoices");
             itemData = db.GetCollection<ItemModel>("Items");
-            saleData = db.GetCollection<DailySale>("DailySale");
+            saleData = db.GetCollection<DailySaleModel>("DailySale");
             gridControl1.DataSource = data.Query().OrderByDescending(x => x.Id).ToList();
             txt_Item.Properties.DataSource = itemData.Query().Where(x => x.ItemQuatity > 0).ToList();
         }
@@ -75,8 +75,23 @@ namespace Battery.User_Controls
                 if (item != null) item.ItemQuatity = item.ItemQuatity - int.Parse(txt_Quantity.Text);
                 itemData.Update(item);
                 statusChange(invoice);
-               
-       
+
+                var sale = saleData.FindOne(x => x.Date == invoice.Date);
+                if(sale == null)
+                {
+                    var todaySale = new DailySaleModel
+                    {
+                        Date = invoice.Date,
+                        Sale = invoice.Paid,
+                    };
+                    saleData.Insert(todaySale);
+                    saleData.Update(todaySale);
+                }
+                else
+                {
+                    sale.Sale = sale.Sale + invoice.Paid;
+                    saleData.Update(sale);
+                }
 
                 col.Insert(invoice);
                 RefreshData();
@@ -230,7 +245,7 @@ namespace Battery.User_Controls
 
         private void gridView1_CellValueChanged_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            curr = gridView1.GetFocusedRow();
+            var curr = gridView1.GetFocusedRow() as InvoiceModel;
             if (curr != null)
             {
 
@@ -238,11 +253,25 @@ namespace Battery.User_Controls
                 data.Update((InvoiceModel)curr);
 
             }
+            var todaySale = saleData.FindOne(x => x.Date == curr.Date);
+            var paidNow = curr.Paid - Properties.Settings.Default.lastPaid;
+            todaySale.Sale = todaySale.Sale + paidNow;
+            saleData.Update(todaySale);
         }
 
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             ResetForm();
+        }
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            var currRow = gridView1.GetFocusedRow() as InvoiceModel;
+            if(currRow != null)
+            {
+                Properties.Settings.Default.lastPaid = currRow.Paid;
+                Properties.Settings.Default.Save();
+            }
         }
     }
 }
