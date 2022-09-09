@@ -74,6 +74,7 @@
             this.colTotalPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colitemDetail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Availability = new DevExpress.XtraGrid.Columns.GridColumn();
             this.delete = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_Delete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -501,12 +502,14 @@
             this.colTotalPrice,
             this.colitemDate,
             this.colitemDetail,
+            this.Availability,
             this.delete});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle);
+            this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             // 
             // colItem
             // 
@@ -515,7 +518,7 @@
             this.colItem.Name = "colItem";
             this.colItem.Visible = true;
             this.colItem.VisibleIndex = 0;
-            this.colItem.Width = 94;
+            this.colItem.Width = 109;
             // 
             // colPrice
             // 
@@ -525,7 +528,7 @@
             this.colPrice.Name = "colPrice";
             this.colPrice.Visible = true;
             this.colPrice.VisibleIndex = 1;
-            this.colPrice.Width = 94;
+            this.colPrice.Width = 73;
             // 
             // colItemQuatity
             // 
@@ -535,7 +538,7 @@
             this.colItemQuatity.Name = "colItemQuatity";
             this.colItemQuatity.Visible = true;
             this.colItemQuatity.VisibleIndex = 2;
-            this.colItemQuatity.Width = 94;
+            this.colItemQuatity.Width = 83;
             // 
             // colTotalPrice
             // 
@@ -548,7 +551,7 @@
             this.colTotalPrice.OptionsColumn.ReadOnly = true;
             this.colTotalPrice.Visible = true;
             this.colTotalPrice.VisibleIndex = 3;
-            this.colTotalPrice.Width = 94;
+            this.colTotalPrice.Width = 79;
             // 
             // colitemDate
             // 
@@ -570,7 +573,18 @@
             this.colitemDetail.Name = "colitemDetail";
             this.colitemDetail.Visible = true;
             this.colitemDetail.VisibleIndex = 5;
-            this.colitemDetail.Width = 94;
+            this.colitemDetail.Width = 237;
+            // 
+            // Availability
+            // 
+            this.Availability.Caption = "Availability";
+            this.Availability.FieldName = "Availability";
+            this.Availability.MinWidth = 25;
+            this.Availability.Name = "Availability";
+            this.Availability.OptionsColumn.ReadOnly = true;
+            this.Availability.Visible = true;
+            this.Availability.VisibleIndex = 6;
+            this.Availability.Width = 146;
             // 
             // delete
             // 
@@ -579,8 +593,8 @@
             this.delete.MinWidth = 25;
             this.delete.Name = "delete";
             this.delete.Visible = true;
-            this.delete.VisibleIndex = 6;
-            this.delete.Width = 94;
+            this.delete.VisibleIndex = 7;
+            this.delete.Width = 51;
             // 
             // btn_Delete
             // 
@@ -732,5 +746,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_Delete;
         private System.Windows.Forms.RichTextBox rich_ItemDetails;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraGrid.Columns.GridColumn Availability;
     }
 }

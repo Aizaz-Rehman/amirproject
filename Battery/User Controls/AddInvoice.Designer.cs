@@ -207,9 +207,9 @@
             // txt_Detail
             // 
             this.txt_Detail.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txt_Detail.Location = new System.Drawing.Point(79, 356);
+            this.txt_Detail.Location = new System.Drawing.Point(79, 358);
             this.txt_Detail.Name = "txt_Detail";
-            this.txt_Detail.Size = new System.Drawing.Size(296, 65);
+            this.txt_Detail.Size = new System.Drawing.Size(296, 64);
             this.txt_Detail.TabIndex = 16;
             this.txt_Detail.Text = "";
             // 
@@ -246,7 +246,7 @@
             // date_Invoice
             // 
             this.date_Invoice.EditValue = null;
-            this.date_Invoice.Location = new System.Drawing.Point(79, 316);
+            this.date_Invoice.Location = new System.Drawing.Point(79, 318);
             this.date_Invoice.Name = "date_Invoice";
             this.date_Invoice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.date_Invoice.Properties.Appearance.Options.UseFont = true;
@@ -260,7 +260,7 @@
             // 
             // txt_Paid
             // 
-            this.txt_Paid.Location = new System.Drawing.Point(79, 276);
+            this.txt_Paid.Location = new System.Drawing.Point(79, 278);
             this.txt_Paid.Name = "txt_Paid";
             this.txt_Paid.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Paid.Properties.Appearance.Options.UseFont = true;
@@ -276,7 +276,7 @@
             // 
             // txt_Quantity
             // 
-            this.txt_Quantity.Location = new System.Drawing.Point(79, 236);
+            this.txt_Quantity.Location = new System.Drawing.Point(79, 238);
             this.txt_Quantity.Name = "txt_Quantity";
             this.txt_Quantity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Quantity.Properties.Appearance.Options.UseFont = true;
@@ -292,7 +292,7 @@
             // 
             // txt_Price
             // 
-            this.txt_Price.Location = new System.Drawing.Point(79, 196);
+            this.txt_Price.Location = new System.Drawing.Point(79, 198);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Price.Properties.Appearance.Options.UseFont = true;
@@ -308,7 +308,7 @@
             // 
             // txt_Item
             // 
-            this.txt_Item.Location = new System.Drawing.Point(79, 156);
+            this.txt_Item.Location = new System.Drawing.Point(79, 158);
             this.txt_Item.Name = "txt_Item";
             this.txt_Item.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Item.Properties.Appearance.Options.UseFont = true;
@@ -332,7 +332,7 @@
             // 
             // txt_Phone
             // 
-            this.txt_Phone.Location = new System.Drawing.Point(79, 116);
+            this.txt_Phone.Location = new System.Drawing.Point(79, 118);
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.txt_Phone.Properties.Appearance.Options.UseFont = true;
@@ -349,7 +349,9 @@
             // 
             this.txt_Address.Location = new System.Drawing.Point(79, 79);
             this.txt_Address.Name = "txt_Address";
-            this.txt_Address.Size = new System.Drawing.Size(296, 22);
+            this.txt_Address.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txt_Address.Properties.Appearance.Options.UseFont = true;
+            this.txt_Address.Size = new System.Drawing.Size(296, 24);
             this.txt_Address.StyleController = this.dataLayoutControl3;
             this.txt_Address.TabIndex = 6;
             // 
@@ -450,7 +452,7 @@
             this.layoutControlItem5.Control = this.txt_Address;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 67);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(367, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(367, 28);
             this.layoutControlItem5.Text = "Address";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(55, 18);
             // 
@@ -459,7 +461,7 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.txt_Phone;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 104);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 106);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(367, 28);
             this.layoutControlItem6.Text = "Phone";
@@ -470,7 +472,7 @@
             this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem7.Control = this.txt_Item;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 146);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(367, 28);
             this.layoutControlItem7.Text = "Item";
@@ -481,7 +483,7 @@
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.Control = this.txt_Price;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 184);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 186);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(367, 28);
             this.layoutControlItem8.Text = "Price";
@@ -490,9 +492,9 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 413);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 414);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(367, 122);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(367, 121);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
@@ -506,7 +508,7 @@
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 93);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 95);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(367, 11);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -514,7 +516,7 @@
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 132);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 134);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
             this.emptySpaceItem6.Size = new System.Drawing.Size(367, 12);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -522,7 +524,7 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 172);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 174);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
             this.emptySpaceItem7.Size = new System.Drawing.Size(367, 12);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
@@ -530,7 +532,7 @@
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 212);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 214);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(367, 12);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -540,7 +542,7 @@
             this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem9.Control = this.txt_Quantity;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 224);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 226);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(367, 28);
             this.layoutControlItem9.Text = "Quantity";
@@ -549,7 +551,7 @@
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 252);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 254);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
             this.emptySpaceItem9.Size = new System.Drawing.Size(367, 12);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -559,7 +561,7 @@
             this.layoutControlItem10.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem10.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem10.Control = this.txt_Paid;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 264);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 266);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(367, 28);
             this.layoutControlItem10.Text = "Paid";
@@ -568,7 +570,7 @@
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 292);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 294);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
             this.emptySpaceItem10.Size = new System.Drawing.Size(367, 12);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -578,7 +580,7 @@
             this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F);
             this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem11.Control = this.date_Invoice;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 304);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 306);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(367, 28);
             this.layoutControlItem11.Text = "Date";
@@ -587,7 +589,7 @@
             // emptySpaceItem11
             // 
             this.emptySpaceItem11.AllowHotTrack = false;
-            this.emptySpaceItem11.Location = new System.Drawing.Point(0, 332);
+            this.emptySpaceItem11.Location = new System.Drawing.Point(0, 334);
             this.emptySpaceItem11.Name = "emptySpaceItem11";
             this.emptySpaceItem11.Size = new System.Drawing.Size(367, 12);
             this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -613,9 +615,9 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.txt_Detail;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 344);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 346);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(367, 69);
+            this.layoutControlItem12.Size = new System.Drawing.Size(367, 68);
             this.layoutControlItem12.Text = "Details";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(55, 16);
             // 
@@ -669,7 +671,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridView1_RowCellStyle_1);
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
-            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged_1);
+            this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             // 
             // colName
             // 

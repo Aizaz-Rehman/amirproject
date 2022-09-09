@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Battery.Models
 {
-
+    public enum availability
+    {
+        Available = 10,
+        OutOfStock = 20,
+    }
     public class ItemModel
     {
         public int Id { get; set; }
@@ -16,5 +20,6 @@ namespace Battery.Models
         public long StockPrice => Price * ItemQuatity;
         public DateTime itemDate { get; set; }  
         public string itemDetail { get; set; }
+        public availability Availability { get; set; }
     }
 }

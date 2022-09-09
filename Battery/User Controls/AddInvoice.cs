@@ -5,12 +5,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using LiteDB;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Battery.User_Controls
@@ -243,22 +238,6 @@ namespace Battery.User_Controls
             SaveData();
         }
 
-        private void gridView1_CellValueChanged_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            var curr = gridView1.GetFocusedRow() as InvoiceModel;
-            if (curr != null)
-            {
-
-                statusChange((InvoiceModel)curr);
-                data.Update((InvoiceModel)curr);
-
-            }
-            var todaySale = saleData.FindOne(x => x.Date == curr.Date);
-            var paidNow = curr.Paid - Properties.Settings.Default.lastPaid;
-            todaySale.Sale = todaySale.Sale + paidNow;
-            saleData.Update(todaySale);
-        }
-
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             ResetForm();
@@ -269,9 +248,41 @@ namespace Battery.User_Controls
             var currRow = gridView1.GetFocusedRow() as InvoiceModel;
             if(currRow != null)
             {
+                Properties.Settings.Default.lastPaid = 0;
                 Properties.Settings.Default.lastPaid = currRow.Paid;
                 Properties.Settings.Default.Save();
             }
         }
+
+        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            var curr = gridView1.GetFocusedRow() as InvoiceModel;
+            if (curr != null)
+            {
+
+                statusChange(curr);
+                data.Update(curr);
+
+            }
+            var paidNow = curr.Paid - Properties.Settings.Default.lastPaid;
+            var todaySale = saleData.FindOne(x => x.Date == curr.Date);
+            if (todaySale == null)
+            {
+                var newSale = new DailySaleModel
+                {
+                    Date = curr.Date,
+                    Sale = paidNow,
+                };
+                saleData.Insert(newSale);
+                saleData.Update(newSale);
+            }
+            else
+            {
+                todaySale.Sale = todaySale.Sale + paidNow;
+                saleData.Update(todaySale);
+            }
+        }
+
+        
     }
 }

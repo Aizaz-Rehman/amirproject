@@ -1,7 +1,9 @@
 ﻿using Battery.Configuration;
 using Battery.Models;
+using DevExpress.ClipboardSource.SpreadsheetML;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting.Native;
 using LiteDB;
 using System;
 using System.Collections.Generic;
@@ -52,38 +54,31 @@ namespace Battery.User_Controls
                     Price = long.Parse(txt_Price.Text),
                     ItemQuatity = int.Parse(txt_Quantity.Text),
                     itemDate = date_Item.DateTime,
-                    //itemDetail = .Text.ToString() ?? "",
+                    itemDetail = rich_ItemDetails.Text.ToString() ?? "",
 
                 };
-                //statusChange(_item);
+                statusChange(_item);
                 col.Insert(_item);
                 RefreshData();
                 ResetForm();
             }
 
         }
-        private void statusChange(InvoiceModel inv)
+        private void statusChange(ItemModel item)
         {
 
-            //if (inv != null)
-            //{
-            //    if (inv.Paid > 0 && inv.Paid < inv.Price)
-            //    {
-            //        inv.Status = status.PartialPaid;
-            //    }
-            //    else if (inv.Paid == 0)
-            //    {
-            //        inv.Status = status.UnPaid;
-            //    }
-            //    else if (inv.Paid == inv.Price)
-            //    {
-            //        inv.Status = status.Paid;
-            //    }
-            //    else if (inv.Paid > inv.Price)
-            //    {
-            //        inv.Status = status.OverPaid;
-            //    }
-            //}
+            if (item != null)
+            {
+                if (item.ItemQuatity > 0)
+                {
+                    item.Availability = availability.Available;
+                }
+                else if (item.ItemQuatity <=  0)
+                {
+                    item.Availability = availability.OutOfStock;
+                }
+               
+            }
         }
         public void RefreshData()
         {
@@ -163,9 +158,53 @@ namespace Battery.User_Controls
         {
 
             GridView currentView = sender as GridView;
+            if (e.Column.FieldName == "Availability")
+            {
+                if (e.Column.AbsoluteIndex == 6)
+                {
+                    if (e.CellValue.ToString() == "OutOfStock")
+                    {
+                        e.Appearance.BackColor = Color.Red;
+                        e.Appearance.ForeColor = Color.White;
+                    }
+                    else if (e.CellValue.ToString() == "Available")
+                    {
+                        e.Appearance.BackColor = Color.Green;
+                        e.Appearance.ForeColor = Color.White;
+                    }
+
+                }
+            }
+        }
+
+        private void btn_ItemAdd_Click(object sender, EventArgs e)
+        {
+            SaveData();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
+
+        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            var curr = gridView1.GetFocusedRow() as ItemModel;
+            if (curr != null)
+            {
+
+                statusChange(curr);
+                itemData.Update(curr);
+
+            }
+           
+        }
+        private void gridView1_RowCellStyle_1(object sender, RowCellStyleEventArgs e)
+        {
+            GridView currentView = sender as GridView;
             if (e.Column.FieldName == "Status")
             {
-                if (e.Column.AbsoluteIndex == 9)
+                if (e.Column.AbsoluteIndex == 11)
                 {
                     if (e.CellValue.ToString() == "UnPaid")
                     {
@@ -189,16 +228,6 @@ namespace Battery.User_Controls
                     }
                 }
             }
-        }
-
-        private void btn_ItemAdd_Click(object sender, EventArgs e)
-        {
-            SaveData();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            ResetForm();
         }
     }
 }
